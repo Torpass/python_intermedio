@@ -1,9 +1,5 @@
 #Las list comprehensions es un manera simplificada de interar una lista y modificar sus valores solo si, si se cumplle una condicional, por ejemplo: (La condicional es opcional)
  
-from pdb import post_mortem
-from re import I
-
-
 def list_comprehensions_names():
 
     first_name_list=["Pastor", "José"]
