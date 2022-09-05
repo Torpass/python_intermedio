@@ -4,6 +4,8 @@
 
 #map; En vez de usar un bucle for, la función map() proporciona una forma de "aplicar una función a cada elemento en un iterable", el primer valor va a ser la funcion que queremos aplicar, y el segundo valor va a ser la lista que queremos interar y aplicar la funcion
 
+
+
 def filtrar():
     list_n = [1,4,5,234,62,3,123,1231,51,2]
     my_new_list= list(filter(lambda x: x%2 == 0, list_n))
