@@ -1,5 +1,3 @@
-
-
 DATA = [
     {
         'name': 'Facundo',
@@ -73,45 +71,47 @@ DATA = [
     },
 ]
 
-def position_selection(Datas):
+def all_position(Datas):
     works=['Language Maker', 'Human Resources Manager', 'Student', 'Support', 'Backend Developer','Associate', 'QA Manager','UX Designer','Technical Coach']
 
     selection=int(input('Seleccione el trabajo que busca:\n1)Language Maker\n2)Human Resources Manager\n3)Student\n4)Support\n5)Backend Developer\n6)Associate\n7)QA Manager\n8)UX Designer\n9)Technical Coach\n: '))
-
     selection_ = works[selection-1]
-
     all_workers=[worker['name'] for worker in Datas if worker['position']==selection_]
     print(all_workers)
 
 
-def fix_words(word): 
-    word=word.capitalize()
-    word=word.replace(' ','')
-    return word
+def all_languages(Datas):   
+    languages=['python','go','java','javascript','ruby']
+    selection=int(input('Seleccione el lenguaje:\n1)python\n2)go\n3)java\njavascript\n5)ruby\n:')) 
+    selection_=languages[selection-1]
+    print(selection_)
+
+    all_language=[worker['name'] for worker in Datas if worker['language']==selection_]
+    print(all_language)
 
 
-def all_python(Datas):   
-    all=[workers['name'] for workers in Datas if workers['language']=='python']
-    print(all)
-
-
-def all_work(Datas):
-        empresa=fix_words(input('Ingrese la empresa que desee ver: '))
-        all= [worker['name'] for worker in Datas if worker['organization'] == empresa]
-        print(all)
-
-
-def all_positions(datas):
-    position=input('Ingrese la posicion que desea ver: ')
-    all=[worker['name'] for worker in datas if worker['position'] == position ]
-    print(position)
-    print(all)
+def all_companies(Datas):
+        companies=['Python Organization','Master','Rappi','Platzi','Everis','Globant']
+        selection=int(input('Seleccione la organizacion:\n1)Python Organization\n2)Master\n3)Rappi\n4)Platzi\n5)Everis\n6)Globant\n:'))
+        selection_=companies[selection-1]
+        all_busnises=[worker['name'] for worker in Datas if worker['organization'] == selection_]
+        print(all_busnises)
 
 
 def run():
-    position_selection(DATA)
-    # all_work(DATA)
-    # all_python(DATA)
+
+    selection=int(input('Seleccione que desea ver:\n1)Cargo correspondiente a cada empleado\n2)Tecnología que usa cada empleado\n3)Compañía en que que trabaja cada empleado\n:'))
+    if selection == 1:
+        all_position(DATA)
+    elif selection == 2:
+        all_languages(DATA)
+    elif selection == 3:
+        all_companies(DATA)
+    else:
+        print('Seleccion incorrecta ingrese de nuevo')
+    
+    print('Programa finalizado')
+    
 
 if __name__=='__main__':
     run()
