@@ -1,6 +1,3 @@
-from unittest import addModuleCleanup
-
-
 DATA = [
     {
         'name': 'Facundo',
@@ -74,6 +71,7 @@ DATA = [
     },
 ]
 
+
 def all_position(Datas):
     works=['Language Maker', 'Human Resources Manager', 'Student', 'Support', 'Backend Developer','Associate', 'QA Manager','UX Designer','Technical Coach']
 
@@ -108,11 +106,10 @@ def new_dict_old(Datas):
     print(old_people_request)
 
 
-
 def run():
 
 
-    selection=int(input('Seleccione que desea ver:\n1)Cargo correspondiente a cada empleado\n2)Tecnología que usa cada empleado\n3)Compañía en que que trabaja cada empleado\n4)Mayores de 3 años\n:'))
+    selection=int(input('Seleccione que desea ver:\n1)Cargo correspondiente a cada empleado\n2)Tecnología que usa cada empleado\n3)Compañía en que que trabaja cada empleado\n4)Mayores de 30 años\n:'))
     if selection == 1:
         all_position(DATA)
     elif selection == 2:
