@@ -1,3 +1,6 @@
+from unittest import addModuleCleanup
+
+
 DATA = [
     {
         'name': 'Facundo',
@@ -98,17 +101,28 @@ def all_companies(Datas):
         print(all_busnises)
 
 
+def new_dict_old(Datas):
+    adults=[worker['name'] for worker in Datas if worker['age'] > 18]
+    old_people= list(map(lambda worker: worker | {"old": worker['age'] > 30}, Datas))
+    old_people_request=[worker['name'] for worker in old_people if worker["old"] != False]
+    print(old_people_request)
+
+
+
 def run():
 
-    selection=int(input('Seleccione que desea ver:\n1)Cargo correspondiente a cada empleado\n2)Tecnología que usa cada empleado\n3)Compañía en que que trabaja cada empleado\n:'))
+
+    selection=int(input('Seleccione que desea ver:\n1)Cargo correspondiente a cada empleado\n2)Tecnología que usa cada empleado\n3)Compañía en que que trabaja cada empleado\n4)Mayores de 3 años\n:'))
     if selection == 1:
         all_position(DATA)
     elif selection == 2:
         all_languages(DATA)
     elif selection == 3:
         all_companies(DATA)
+    elif selection == 4:
+        new_dict_old(DATA)
     else:
-        print('Seleccion incorrecta ingrese de nuevo')
+        print('Opcion incorrecta intente de nuevo')
     
     print('Programa finalizado')
     
